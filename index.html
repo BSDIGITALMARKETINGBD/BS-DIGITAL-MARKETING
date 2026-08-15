@@ -1,0 +1,1972 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BS Digital Marketing</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+:root{
+    --bg:#07111f;
+    --card:#0d1b2a;
+    --card2:#10243a;
+    --text:#ffffff;
+    --muted:#aab8c7;
+    --primary:#00d4ff;
+    --secondary:#7c3cff;
+    --success:#22c55e;
+    --danger:#ef4444;
+    --border:rgba(255,255,255,.10);
+}
+
+body{
+    background:linear-gradient(135deg,#030712,#071a2d,#090b20);
+    color:var(--text);
+    min-height:100vh;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    cursor:pointer;
+    border:none;
+}
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(3,7,18,.92);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+}
+
+.nav-inner{
+    min-height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:23px;
+    font-weight:bold;
+    color:var(--primary);
+}
+
+.logo span{
+    color:white;
+}
+
+.nav-links{
+    display:flex;
+    gap:22px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:#d7e1ec;
+    font-size:14px;
+}
+
+.nav-links a:hover{
+    color:var(--primary);
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    color:white;
+    font-size:25px;
+}
+
+.lang-btn{
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+    color:white;
+    padding:9px 14px;
+    border-radius:20px;
+}
+
+/* HERO */
+
+.hero{
+    padding:100px 0 80px;
+    text-align:center;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 15px;
+    border:1px solid rgba(0,212,255,.3);
+    border-radius:30px;
+    color:var(--primary);
+    background:rgba(0,212,255,.07);
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(38px,7vw,72px);
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.gradient{
+    background:linear-gradient(90deg,#00d4ff,#8b5cf6,#ec4899);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:var(--muted);
+    line-height:1.8;
+}
+
+.btn-group{
+    margin-top:30px;
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:13px 22px;
+    border-radius:10px;
+    color:white;
+    font-weight:bold;
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+}
+
+.btn.secondary{
+    background:transparent;
+    border:1px solid var(--border);
+}
+
+/* SECTION */
+
+section{
+    padding:75px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:var(--muted);
+}
+
+/* CARDS */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:rgba(13,27,42,.8);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(0,212,255,.4);
+}
+
+.icon{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+/* PORTFOLIO */
+
+.portfolio-box{
+    height:210px;
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#101d35,#172554,#30145e);
+    border:1px solid var(--border);
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* FORMS */
+
+.form-box{
+    max-width:520px;
+    margin:auto;
+    background:rgba(13,27,42,.9);
+    padding:30px;
+    border-radius:18px;
+    border:1px solid var(--border);
+}
+
+.input{
+    width:100%;
+    padding:13px;
+    margin:8px 0 15px;
+    border-radius:9px;
+    border:1px solid var(--border);
+    background:#07111f;
+    color:white;
+    outline:none;
+}
+
+textarea.input{
+    min-height:100px;
+    resize:vertical;
+}
+
+label{
+    color:#dbeafe;
+    font-size:14px;
+}
+
+.full{
+    width:100%;
+}
+
+/* DASHBOARD */
+
+.dashboard{
+    display:none;
+}
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.stat{
+    background:var(--card);
+    padding:20px;
+    border-radius:15px;
+    border:1px solid var(--border);
+}
+
+.stat h3{
+    font-size:28px;
+    color:var(--primary);
+}
+
+.stat p{
+    color:var(--muted);
+    margin-top:5px;
+}
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:14px;
+    border-bottom:1px solid var(--border);
+    text-align:left;
+    white-space:nowrap;
+}
+
+th{
+    color:var(--primary);
+}
+
+.status{
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+    background:rgba(34,197,94,.15);
+    color:#4ade80;
+}
+
+/* MODAL */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:2000;
+    padding:20px;
+}
+
+.modal-box{
+    width:100%;
+    max-width:500px;
+    max-height:90vh;
+    overflow:auto;
+    background:#0b1727;
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:25px;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    right:15px;
+    top:12px;
+    background:none;
+    color:white;
+    font-size:25px;
+}
+
+/* CHATBOT */
+
+.chat-btn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;
+    font-size:25px;
+    z-index:1500;
+    box-shadow:0 8px 30px rgba(0,212,255,.25);
+}
+
+.chat-box{
+    position:fixed;
+    right:20px;
+    bottom:90px;
+    width:340px;
+    height:450px;
+    background:#091525;
+    border:1px solid var(--border);
+    border-radius:18px;
+    z-index:1500;
+    display:none;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+}
+
+.chat-header{
+    padding:15px;
+    background:linear-gradient(90deg,#07384a,#241153);
+    font-weight:bold;
+}
+
+.chat-messages{
+    height:335px;
+    overflow:auto;
+    padding:15px;
+}
+
+.msg{
+    margin-bottom:10px;
+    padding:9px 12px;
+    border-radius:12px;
+    max-width:85%;
+    line-height:1.5;
+}
+
+.bot{
+    background:#13243a;
+}
+
+.user{
+    background:#174c61;
+    margin-left:auto;
+}
+
+.chat-input{
+    display:flex;
+    border-top:1px solid var(--border);
+}
+
+.chat-input input{
+    flex:1;
+    background:#07111f;
+    color:white;
+    border:none;
+    padding:13px;
+    outline:none;
+}
+
+.chat-input button{
+    width:60px;
+    background:var(--primary);
+}
+
+/* ADMIN */
+
+.admin{
+    display:none;
+}
+
+/* FOOTER */
+
+footer{
+    padding:40px 0;
+    border-top:1px solid var(--border);
+    text-align:center;
+    color:var(--muted);
+}
+
+.social{
+    margin-top:15px;
+    display:flex;
+    justify-content:center;
+    gap:12px;
+}
+
+.social a{
+    padding:9px 14px;
+    border:1px solid var(--border);
+    border-radius:8px;
+}
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translateX(-50%);
+    background:#111827;
+    border:1px solid var(--border);
+    padding:13px 20px;
+    border-radius:10px;
+    display:none;
+    z-index:3000;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:#050b15;
+        padding:20px;
+        flex-direction:column;
+        border-bottom:1px solid var(--border);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .dashboard-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero{
+        padding:70px 0;
+    }
+
+    .chat-box{
+        right:10px;
+        bottom:85px;
+        width:calc(100% - 20px);
+    }
+}
+
+@media(max-width:450px){
+
+    .dashboard-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<div class="container nav-inner">
+
+<a href="#home" class="logo">BS <span>Digital Marketing</span></a>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<div class="nav-links" id="navLinks">
+<a href="#home" onclick="closeMenu()">Home</a>
+<a href="#services" onclick="closeMenu()">Services</a>
+<a href="#portfolio" onclick="closeMenu()">Portfolio</a>
+<a href="#appointment" onclick="closeMenu()">Appointment</a>
+<a href="#reviews" onclick="closeMenu()">Reviews</a>
+<button class="lang-btn" onclick="toggleLanguage()" id="langBtn">বাংলা / EN</button>
+<button class="btn" onclick="openModal('loginModal')">Login</button>
+</div>
+
+</div>
+</nav>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+<div class="container">
+
+<div class="badge">🚀 Digital Growth Partner</div>
+
+<h1>
+Grow Your Business With
+<span class="gradient">BS Digital Marketing</span>
+</h1>
+
+<p id="heroText">
+আপনার ব্যবসাকে অনলাইনে আরও শক্তিশালী করতে আমরা দিচ্ছি
+Social Media Marketing, SEO, Content Creation, Branding এবং আরও অনেক Digital Marketing Service।
+</p>
+
+<div class="btn-group">
+<a href="#services" class="btn">আমাদের Services</a>
+<button class="btn secondary" onclick="openModal('appointmentModal')">Appointment Book করুন</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+<div class="container">
+
+<div class="section-title">
+<h2>Our Services</h2>
+<p>আপনার ব্যবসার জন্য প্রয়োজনীয় Digital Marketing Solutions</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">📱</div>
+<h3>Social Media Marketing</h3>
+<p>Facebook, Instagram এবং অন্যান্য Social Platform-এ আপনার Brand Growth করতে সাহায্য করব।</p>
+</div>
+
+<div class="card">
+<div class="icon">📣</div>
+<h3>Facebook Marketing</h3>
+<p>Professional Facebook Marketing Campaign এবং Audience Targeting।</p>
+</div>
+
+<div class="card">
+<div class="icon">🔎</div>
+<h3>SEO</h3>
+<p>Search Engine-এ Website-এর Visibility এবং Organic Traffic বৃদ্ধি।</p>
+</div>
+
+<div class="card">
+<div class="icon">🎨</div>
+<h3>Content Creation</h3>
+<p>আপনার Brand-এর জন্য Attractive Social Media Content তৈরি।</p>
+</div>
+
+<div class="card">
+<div class="icon">🚀</div>
+<h3>Online Branding</h3>
+<p>Professional Digital Brand Identity এবং Online Presence তৈরি।</p>
+</div>
+
+<div class="card">
+<div class="icon">💻</div>
+<h3>Website Marketing</h3>
+<p>Website Traffic, Conversion এবং Online Business Growth-এর জন্য Marketing Strategy।</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio">
+<div class="container">
+
+<div class="section-title">
+<h2>Our Portfolio</h2>
+<p>আমাদের Sample Projects</p>
+</div>
+
+<div class="grid">
+
+<div class="portfolio-box">Project 01</div>
+<div class="portfolio-box">Project 02</div>
+<div class="portfolio-box">Project 03</div>
+<div class="portfolio-box">Project 04</div>
+<div class="portfolio-box">Project 05</div>
+<div class="portfolio-box">Project 06</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- APPOINTMENT -->
+
+<section id="appointment">
+<div class="container">
+
+<div class="section-title">
+<h2>Appointment Booking</h2>
+<p>আপনার সুবিধামতো Appointment Request পাঠান</p>
+</div>
+
+<div class="form-box">
+
+<form onsubmit="bookAppointment(event)">
+
+<label>আপনার নাম</label>
+<input class="input" id="appName" required>
+
+<label>Phone / WhatsApp</label>
+<input class="input" id="appPhone" required>
+
+<label>Service</label>
+<select class="input" id="appService">
+<option>Social Media Marketing</option>
+<option>Facebook Marketing</option>
+<option>SEO</option>
+<option>Content Creation</option>
+<option>Online Branding</option>
+<option>Website Marketing</option>
+</select>
+
+<label>Date</label>
+<input class="input" type="date" id="appDate" required>
+
+<label>Message</label>
+<textarea class="input" id="appMessage"></textarea>
+
+<button class="btn full">Appointment Request পাঠান</button>
+
+</form>
+
+</div>
+</div>
+</section>
+
+
+<!-- ORDERS -->
+
+<section id="orders">
+<div class="container">
+
+<div class="section-title">
+<h2>Order Tracking</h2>
+<p>আপনার Order Status দেখুন</p>
+</div>
+
+<div class="form-box">
+
+<label>Order ID</label>
+<input class="input" id="orderId" placeholder="যেমন: BS-1001">
+
+<button class="btn full" onclick="trackOrder()">Track Order</button>
+
+<div id="orderResult" style="margin-top:20px"></div>
+
+</div>
+</div>
+</section>
+
+
+<!-- COUPON -->
+
+<section id="coupon">
+<div class="container">
+
+<div class="section-title">
+<h2>Coupon & Discount</h2>
+<p>আপনার Discount Code ব্যবহার করুন</p>
+</div>
+
+<div class="form-box">
+
+<input class="input" id="couponCode" placeholder="Coupon Code">
+
+<button class="btn full" onclick="applyCoupon()">Apply Coupon</button>
+
+<div id="couponResult" style="margin-top:15px;text-align:center"></div>
+
+</div>
+</div>
+</section>
+
+
+<!-- REVIEWS -->
+
+<section id="reviews">
+<div class="container">
+
+<div class="section-title">
+<h2>Customer Reviews</h2>
+<p>আমাদের Client-দের মতামত</p>
+</div>
+
+<div class="grid" id="reviewList">
+
+<div class="card">
+<div class="icon">⭐️⭐️⭐️⭐️⭐️</div>
+<h3>Rahim</h3>
+<p>Excellent service. খুবই Professional কাজ।</p>
+</div>
+
+<div class="card">
+<div class="icon">⭐️⭐️⭐️⭐️⭐️</div>
+<h3>Karim</h3>
+<p>আমাদের Facebook Marketing-এ ভালো Result পেয়েছি।</p>
+</div>
+
+</div>
+
+<br>
+
+<div class="form-box">
+
+<h3 style="margin-bottom:20px">আপনার Review দিন</h3>
+
+<input class="input" id="reviewName" placeholder="আপনার নাম">
+
+<select class="input" id="reviewRating">
+<option value="5">★★★★★</option>
+<option value="4">★★★★</option>
+<option value="3">★★★</option>
+<option value="2">★★</option>
+<option value="1">★</option>
+</select>
+
+<textarea class="input" id="reviewText" placeholder="আপনার মতামত"></textarea>
+
+<button class="btn full" onclick="addReview()">Review Submit</button>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- LOGIN MODAL -->
+
+<div class="modal" id="loginModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal('loginModal')">×</button>
+
+<h2 style="margin-bottom:20px">Login</h2>
+
+<input class="input" id="loginEmail" placeholder="Email">
+
+<input class="input" type="password" id="loginPassword" placeholder="Password">
+
+<button class="btn full" onclick="loginUser()">Login</button>
+
+<p style="text-align:center;margin-top:15px;color:#aaa">
+Account নেই?
+<a href="#" onclick="switchToRegister()" style="color:#00d4ff">Register করুন</a>
+</p>
+
+</div>
+</div>
+
+
+<!-- REGISTER MODAL -->
+
+<div class="modal" id="registerModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal('registerModal')">×</button>
+
+<h2 style="margin-bottom:20px">Create Account</h2>
+
+<input class="input" id="regName" placeholder="Full Name">
+
+<input class="input" id="regEmail" placeholder="Email">
+
+<input class="input" type="password" id="regPassword" placeholder="Password">
+
+<input class="input" type="password" id="regConfirm" placeholder="Confirm Password">
+
+<button class="btn full" onclick="registerUser()">Register</button>
+
+</div>
+</div>
+
+
+<!-- APPOINTMENT MODAL -->
+
+<div class="modal" id="appointmentModal">
+
+<div class="modal-box">
+
+<button class="close" onclick="closeModal('appointmentModal')">×</button>
+
+<h2>Appointment</h2>
+
+<br>
+
+<input class="input" id="quickName" placeholder="আপনার নাম">
+
+<input class="input" id="quickPhone" placeholder="Phone / WhatsApp">
+
+<select class="input" id="quickService">
+<option>Social Media Marketing</option>
+<option>Facebook Marketing</option>
+<option>SEO</option>
+<option>Content Creation</option>
+<option>Online Branding</option>
+</select>
+
+<button class="btn full" onclick="quickAppointment()">Book Appointment</button>
+
+</div>
+</div>
+
+
+<!-- DASHBOARD -->
+
+<section class="dashboard" id="dashboard">
+
+<div class="container">
+
+<div class="section-title">
+<h2>User Dashboard</h2>
+<p id="welcomeUser">Welcome</p>
+</div>
+
+<div class="dashboard-grid">
+
+<div class="stat">
+<h3 id="statOrders">0</h3>
+<p>Orders</p>
+</div>
+
+<div class="stat">
+<h3 id="statAppointments">0</h3>
+<p>Appointments</p>
+</div>
+
+<div class="stat">
+<h3 id="statInvoices">0</h3>
+<p>Invoices</p>
+</div>
+
+<div class="stat">
+<h3>৳0</h3>
+<p>Balance</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3 style="margin-bottom:20px">My Orders</h3>
+
+<div class="table-wrap">
+
+<table>
+<thead>
+<tr>
+<th>Order ID</th>
+<th>Service</th>
+<th>Status</th>
+<th>Amount</th>
+</tr>
+</thead>
+
+<tbody id="orderTable">
+
+<tr>
+<td>BS-1001</td>
+<td>Facebook Marketing</td>
+<td><span class="status">Processing</span></td>
+<td>৳2,500</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<br>
+
+<button class="btn" onclick="generateInvoice()">🧾 Generate Invoice</button>
+<button class="btn secondary" onclick="logoutUser()">Logout</button>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ADMIN -->
+
+<section class="admin" id="admin">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Admin Dashboard</h2>
+<p>Website Management Panel</p>
+</div>
+
+<div class="dashboard-grid">
+
+<div class="stat">
+<h3 id="adminUsers">1</h3>
+<p>Total Users</p>
+</div>
+
+<div class="stat">
+<h3 id="adminAppointments">0</h3>
+<p>Appointments</p>
+</div>
+
+<div class="stat">
+<h3>25</h3>
+<p>Services</p>
+</div>
+
+<div class="stat">
+<h3>৳50K+</h3>
+<p>Revenue</p>
+</div>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>👥 User Management</h3>
+<p>Users দেখা ও Manage করার Prototype UI.</p>
+<br>
+<button class="btn" onclick="showToast('User Management খুলছে')">Manage Users</button>
+</div>
+
+<div class="card">
+<h3>📅 Appointment Management</h3>
+<p>Client Appointment Request দেখা ও Manage করুন।</p>
+<br>
+<button class="btn" onclick="showToast('Appointment panel খুলছে')">Manage Appointments</button>
+</div>
+
+<div class="card">
+<h3>🧾 Invoice Management</h3>
+<p>Invoice তৈরি এবং Order অনুযায়ী হিসাব রাখুন।</p>
+<br>
+<button class="btn" onclick="generateInvoice()">Create Invoice</button>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<h3 style="color:#00d4ff">BS Digital Marketing</h3>
+
+<p style="margin-top:10px">
+Grow Your Business With Smart Digital Marketing
+</p>
+
+<div class="social">
+<a href="#">Facebook</a>
+<a href="#">WhatsApp</a>
+<a href="#">Instagram</a>
+</div>
+
+<p style="margin-top:20px">
+© 2026 BS Digital Marketing. All Rights Reserved.
+</p>
+
+</div>
+
+</footer>
+
+
+<!-- CHATBOT -->
+
+<button class="chat-btn" onclick="toggleChat()">🤖</button>
+
+<div class="chat-box" id="chatBox">
+
+<div class="chat-header">
+🤖 BS AI Assistant
+</div>
+
+<div class="chat-messages" id="chatMessages">
+
+<div class="msg bot">
+আসসালামু আলাইকুম! 👋<br>
+আমি BS Digital Marketing-এর AI Assistant।<br><br>
+আপনি কী জানতে চান?
+</div>
+
+</div>
+
+<div class="chat-input">
+
+<input id="chatInput" placeholder="আপনার প্রশ্ন লিখুন..." onkeypress="chatEnter(event)">
+
+<button onclick="sendChat()">➤</button>
+
+</div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+/* =========================
+   BASIC SYSTEM
+========================= */
+
+let users = JSON.parse(localStorage.getItem("bs_users")) || [];
+
+let appointments =
+JSON.parse(localStorage.getItem("bs_appointments")) || [];
+
+let reviews =
+JSON.parse(localStorage.getItem("bs_reviews")) || [];
+
+let currentUser =
+JSON.parse(localStorage.getItem("bs_current_user")) || null;
+
+
+/* =========================
+   MENU
+========================= */
+
+function toggleMenu(){
+
+    document.getElementById("navLinks")
+    .classList.toggle("active");
+
+}
+
+function closeMenu(){
+
+    document.getElementById("navLinks")
+    .classList.remove("active");
+
+}
+
+
+/* =========================
+   LANGUAGE
+========================= */
+
+let english = false;
+
+function toggleLanguage(){
+
+    english = !english;
+
+    const text = document.getElementById("heroText");
+
+    if(english){
+
+        text.innerHTML =
+        "We provide Social Media Marketing, SEO, Content Creation, Branding and Digital Marketing solutions to grow your business online.";
+
+        document.getElementById("langBtn").innerText =
+        "বাংলা";
+
+    }else{
+
+        text.innerHTML =
+        "আপনার ব্যবসাকে অনলাইনে আরও শক্তিশালী করতে আমরা দিচ্ছি Social Media Marketing, SEO, Content Creation, Branding এবং আরও অনেক Digital Marketing Service।";
+
+        document.getElementById("langBtn").innerText =
+        "বাংলা / EN";
+
+    }
+
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+function openModal(id){
+
+    document.getElementById(id).style.display="flex";
+
+}
+
+function closeModal(id){
+
+    document.getElementById(id).style.display="none";
+
+}
+
+function switchToRegister(){
+
+    closeModal("loginModal");
+
+    openModal("registerModal");
+
+}
+
+
+/* =========================
+   REGISTER
+========================= */
+
+function registerUser(){
+
+    const name =
+    document.getElementById("regName").value.trim();
+
+    const email =
+    document.getElementById("regEmail").value.trim();
+
+    const password =
+    document.getElementById("regPassword").value;
+
+    const confirm =
+    document.getElementById("regConfirm").value;
+
+    if(!name || !email || !password){
+
+        showToast("সব তথ্য পূরণ করুন");
+
+        return;
+    }
+
+    if(password !== confirm){
+
+        showToast("Password মিলছে না");
+
+        return;
+    }
+
+    if(users.some(u => u.email === email)){
+
+        showToast("এই Email দিয়ে আগে থেকেই Account আছে");
+
+        return;
+    }
+
+    const user = {
+
+        id:Date.now(),
+
+        name:name,
+
+        email:email,
+
+        password:password
+
+    };
+
+    users.push(user);
+
+    localStorage.setItem(
+        "bs_users",
+        JSON.stringify(users)
+    );
+
+    showToast("Registration সফল হয়েছে");
+
+    closeModal("registerModal");
+
+    document.getElementById("regName").value="";
+    document.getElementById("regEmail").value="";
+    document.getElementById("regPassword").value="";
+    document.getElementById("regConfirm").value="";
+
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+function loginUser(){
+
+    const email =
+    document.getElementById("loginEmail").value.trim();
+
+    const password =
+    document.getElementById("loginPassword").value;
+
+    const user =
+    users.find(
+        u =>
+        u.email === email &&
+        u.password === password
+    );
+
+    if(!user){
+
+        showToast("Email অথবা Password ভুল");
+
+        return;
+    }
+
+    currentUser=user;
+
+    localStorage.setItem(
+        "bs_current_user",
+        JSON.stringify(user)
+    );
+
+    closeModal("loginModal");
+
+    showDashboard();
+
+    showToast("Login সফল হয়েছে");
+
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+function showDashboard(){
+
+    const dash =
+    document.getElementById("dashboard");
+
+    dash.style.display="block";
+
+    document.getElementById("welcomeUser").innerText =
+    "Welcome, " + currentUser.name;
+
+    updateDashboard();
+
+    dash.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+function updateDashboard(){
+
+    const myAppointments =
+    appointments.filter(
+        a =>
+        currentUser &&
+        a.email === currentUser.email
+    );
+
+    document.getElementById(
+        "statAppointments"
+    ).innerText=myAppointments.length;
+
+}
+
+function logoutUser(){
+
+    currentUser=null;
+
+    localStorage.removeItem("bs_current_user");
+
+    document.getElementById("dashboard").style.display="none";
+
+    showToast("Logout হয়েছে");
+
+}
+
+
+/* =========================
+   APPOINTMENT
+========================= */
+
+function bookAppointment(e){
+
+    e.preventDefault();
+
+    const name =
+    document.getElementById("appName").value.trim();
+
+    const phone =
+    document.getElementById("appPhone").value.trim();
+
+    const service =
+    document.getElementById("appService").value;
+
+    const date =
+    document.getElementById("appDate").value;
+
+    const message =
+    document.getElementById("appMessage").value;
+
+    const appointment={
+
+        id:"APP-"+Date.now(),
+
+        name:name,
+
+        phone:phone,
+
+        service:service,
+
+        date:date,
+
+        message:message,
+
+        email:currentUser ?
+        currentUser.email : "",
+
+        status:"Pending"
+
+    };
+
+    appointments.push(appointment);
+
+    localStorage.setItem(
+        "bs_appointments",
+        JSON.stringify(appointments)
+    );
+
+    showToast("Appointment Request সফল হয়েছে");
+
+    e.target.reset();
+
+    if(currentUser){
+
+        updateDashboard();
+
+    }
+
+}
+
+function quickAppointment(){
+
+    const name =
+    document.getElementById("quickName").value.trim();
+
+    const phone =
+    document.getElementById("quickPhone").value.trim();
+
+    const service =
+    document.getElementById("quickService").value;
+
+    if(!name || !phone){
+
+        showToast("নাম ও Phone দিন");
+
+        return;
+    }
+
+    appointments.push({
+
+        id:"APP-"+Date.now(),
+
+        name:name,
+
+        phone:phone,
+
+        service:service,
+
+        date:new Date().toISOString().split("T")[0],
+
+        message:"Quick Appointment",
+
+        email:currentUser ?
+        currentUser.email : "",
+
+        status:"Pending"
+
+    });
+
+    localStorage.setItem(
+        "bs_appointments",
+        JSON.stringify(appointments)
+    );
+
+    closeModal("appointmentModal");
+
+    showToast("Appointment Book হয়েছে");
+
+    if(currentUser){
+
+        updateDashboard();
+
+    }
+
+}
+
+
+/* =========================
+   ORDER TRACKING
+========================= */
+
+function trackOrder(){
+
+    const id =
+    document.getElementById("orderId").value.trim();
+
+    const result =
+    document.getElementById("orderResult");
+
+    if(!id){
+
+        result.innerHTML=
+        "<p style='color:#f87171'>Order ID দিন</p>";
+
+        return;
+    }
+
+    if(id.toUpperCase()==="BS-1001"){
+
+        result.innerHTML=`
+
+        <div class="card">
+
+        <h3>Order Found ✅</h3>
+
+        <p>Order ID: BS-1001</p>
+
+        <p>Service: Facebook Marketing</p>
+
+        <p>Amount: ৳2,500</p>
+
+        <p>
+        Status:
+        <span class="status">Processing</span>
+        </p>
+
+        </div>
+
+        `;
+
+    }else{
+
+        result.innerHTML=
+        "<p style='color:#f87171'>Order পাওয়া যায়নি। Demo হিসেবে BS-1001 ব্যবহার করুন।</p>";
+
+    }
+
+}
+
+
+/* =========================
+   COUPON
+========================= */
+
+function applyCoupon(){
+
+    const code =
+    document.getElementById("couponCode").value
+    .trim()
+    .toUpperCase();
+
+    const result =
+    document.getElementById("couponResult");
+
+    if(code==="BS20"){
+
+        result.innerHTML=
+        "<span style='color:#4ade80'>🎉 Coupon Applied! 20% Discount</span>";
+
+    }else if(code==="WELCOME10"){
+
+        result.innerHTML=
+        "<span style='color:#4ade80'>🎉 10% Welcome Discount Applied!</span>";
+
+    }else{
+
+        result.innerHTML=
+        "<span style='color:#f87171'>Invalid Coupon Code</span>";
+
+    }
+
+}
+
+
+/* =========================
+   REVIEWS
+========================= */
+
+function addReview(){
+
+    const name =
+    document.getElementById("reviewName").value.trim();
+
+    const rating =
+    document.getElementById("reviewRating").value;
+
+    const text =
+    document.getElementById("reviewText").value.trim();
+
+    if(!name || !text){
+
+        showToast("Review পূরণ করুন");
+
+        return;
+    }
+
+    reviews.push({
+
+        name:name,
+
+        rating:rating,
+
+        text:text
+
+    });
+
+    localStorage.setItem(
+        "bs_reviews",
+        JSON.stringify(reviews)
+    );
+
+    renderReviews();
+
+    document.getElementById("reviewName").value="";
+    document.getElementById("reviewText").value="";
+
+    showToast("Review Submit হয়েছে");
+
+}
+
+function renderReviews(){
+
+    const list =
+    document.getElementById("reviewList");
+
+    let html="";
+
+    reviews.forEach(r => {
+
+        html+=`
+
+        <div class="card">
+
+        <div class="icon">
+        ${"⭐".repeat(Number(r.rating))}
+        </div>
+
+        <h3>${escapeHTML(r.name)}</h3>
+
+        <p>${escapeHTML(r.text)}</p>
+
+        </div>
+
+        `;
+
+    });
+
+    if(html){
+
+        list.innerHTML += html;
+
+    }
+
+}
+
+
+/* =========================
+   INVOICE
+========================= */
+
+function generateInvoice(){
+
+    const invoiceNumber =
+    "INV-"+Date.now();
+
+    const date =
+    new Date().toLocaleDateString("en-BD");
+
+    const customer =
+    currentUser ?
+    currentUser.name :
+    "Demo Customer";
+
+    const invoice=`
+
+    <div class="card">
+
+    <h2 style="color:#00d4ff">
+    🧾 BS Digital Marketing
+    </h2>
+
+    <hr style="border-color:#ffffff15;margin:15px 0">
+
+    <p><b>Invoice:</b> ${invoiceNumber}</p>
+
+    <p><b>Date:</b> ${date}</p>
+
+    <p><b>Customer:</b> ${customer}</p>
+
+    <br>
+
+    <div class="table-wrap">
+
+    <table>
+
+    <tr>
+    <th>Service</th>
+    <th>Amount</th>
+    </tr>
+
+    <tr>
+    <td>Digital Marketing Service</td>
+    <td>৳2,500</td>
+    </tr>
+
+    <tr>
+    <td><b>Total</b></td>
+    <td><b>৳2,500</b></td>
+    </tr>
+
+    </table>
+
+    </div>
+
+    <br>
+
+    <button class="btn" onclick="window.print()">
+    Print Invoice
+    </button>
+
+    </div>
+
+    `;
+
+    const modal =
+    document.createElement("div");
+
+    modal.className="modal";
+
+    modal.style.display="flex";
+
+    modal.innerHTML=`
+
+    <div class="modal-box">
+
+    <button class="close"
+    onclick="this.parentElement.parentElement.remove()">×</button>
+
+    ${invoice}
+
+    </div>
+
+    `;
+
+    document.body.appendChild(modal);
+
+}
+
+
+/* =========================
+   CHATBOT
+========================= */
+
+function toggleChat(){
+
+    const box =
+    document.getElementById("chatBox");
+
+    box.style.display =
+    box.style.display==="block"
+    ? "none"
+    : "block";
+
+}
+
+function chatEnter(e){
+
+    if(e.key==="Enter"){
+
+        sendChat();
+
+    }
+
+}
+
+function sendChat(){
+
+    const input =
+    document.getElementById("chatInput");
+
+    const text =
+    input.value.trim();
+
+    if(!text) return;
+
+    addMessage(text,"user");
+
+    input.value="";
+
+    setTimeout(()=>{
+
+        let reply=
+        "আপনার প্রশ্নের জন্য ধন্যবাদ। আমাদের Team শীঘ্রই আপনার সাথে যোগাযোগ করবে।";
+
+        const q=text.toLowerCase();
+
+        if(q.includes("price") || q.includes("দাম")){
+
+            reply=
+            "আমাদের Service-এর দাম কাজের ধরন অনুযায়ী নির্ধারণ করা হয়। Appointment করে বিস্তারিত জানতে পারেন।";
+
+        }else if(
+            q.includes("seo") ||
+            q.includes("এসইও")
+        ){
+
+            reply=
+            "হ্যাঁ, আমরা SEO Service প্রদান করি। Website Ranking এবং Organic Traffic বৃদ্ধির জন্য কাজ করি।";
+
+        }else if(
+            q.includes("facebook") ||
+            q.includes("ফেসবুক")
+        ){
+
+            reply=
+            "আমরা Facebook Marketing, Page Management এবং Campaign Optimization Service প্রদান করি।";
+
+        }else if(
+            q.includes("contact") ||
+            q.includes("যোগাযোগ")
+        ){
+
+            reply=
+            "আপনি Appointment Booking Form ব্যবহার করে আমাদের সাথে যোগাযোগ করতে পারেন।";
+
+        }else if(
+            q.includes("hello") ||
+            q.includes("hi") ||
+            q.includes("হ্যালো")
+        ){
+
+            reply=
+            "হ্যালো! 👋 BS Digital Marketing-এ আপনাকে স্বাগতম। কীভাবে সাহায্য করতে পারি?";
+
+        }
+
+        addMessage(reply,"bot");
+
+    },600);
+
+}
+
+function addMessage(text,type){
+
+    const messages =
+    document.getElementById("chatMessages");
+
+    const div =
+    document.createElement("div");
+
+    div.className="msg "+type;
+
+    div.innerHTML=escapeHTML(text);
+
+    messages.appendChild(div);
+
+    messages.scrollTop=
+    messages.scrollHeight;
+
+}
+
+
+/* =========================
+   ADMIN DEMO
+========================= */
+
+function openAdmin(){
+
+    const admin =
+    document.getElementById("admin");
+
+    admin.style.display="block";
+
+    document.getElementById(
+        "adminUsers"
+    ).innerText=users.length;
+
+    document.getElementById(
+        "adminAppointments"
+    ).innerText=appointments.length;
+
+    admin.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+function showToast(message){
+
+    const toast =
+    document.getElementById("toast");
+
+    toast.innerText=message;
+
+    toast.style.display="block";
+
+    setTimeout(()=>{
+
+        toast.style.display="none";
+
+    },2500);
+
+}
+
+
+/* =========================
+   SECURITY HELPER
+========================= */
+
+function escapeHTML(text){
+
+    return String(text)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =========================
+   INIT
+========================= */
+
+window.addEventListener("load",()=>{
+
+    if(currentUser){
+
+        showDashboard();
+
+    }
+
+    if(reviews.length){
+
+        renderReviews();
+
+    }
+
+});
+
+
+/*
+====================================================
+IMPORTANT:
+
+এই Prototype-এ নিচেরগুলো Demo/Frontend হিসেবে আছে:
+
+1. Login/Register
+2. Dashboard
+3. Appointment
+4. Order Tracking
+5. Coupon
+6. Invoice
+7. Reviews
+8. Chatbot
+9. Admin UI
+10. Language Switcher
+
+কিন্তু এগুলো এখনো Real Production Backend নয়।
+
+পরবর্তী ধাপে Firebase/Backend যুক্ত করলে:
+- Real Database
+- Secure Authentication
+- Real Admin Panel
+- Real Orders
+- Real Payment
+- Email/SMS
+- WhatsApp
+- 2FA
+- AI API
+- Real-time Chat
+ইত্যাদি যোগ করা যাবে।
+
+PASSWORD/USER DATA এই Prototype-এ localStorage-এ রাখা হচ্ছে।
+Production website-এ এভাবে Password রাখা নিরাপদ নয়।
+====================================================
+*/
+
+</script>
+
+</body>
+</html>
